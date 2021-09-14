@@ -1,8 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders Hello there text', () => {
-  render(<App />);
-  const initialText = screen.getByText(/Hello there/i);
-  expect(initialText).toBeInTheDocument();
-});
+describe('App', () => {
+  it('should render welcome ', () => {
+    render(<App/>);
+
+    const welcomeText = screen.getByRole('heading')
+    const paragraph = screen.getByText('Digite o nome ou a ID do pokemon!')
+
+    expect(welcomeText).toBeInTheDocument()
+    expect(paragraph).toBeInTheDocument()
+  })
+
+})
