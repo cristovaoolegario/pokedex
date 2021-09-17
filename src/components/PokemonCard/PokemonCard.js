@@ -2,12 +2,12 @@ import React from "react";
 import "./PokemonCard.css";
 
 const PokemonCard = ({ pokemon }) => (
-  <div class="PokemonCard" key={pokemon.id}>
+  <div className="PokemonCard" key={pokemon.id}>
     <>
-      <div class="PokemonAvatarWrapper">
-        <h2 class="PokemonName">{pokemon.name}</h2>
+      <div className="PokemonAvatarWrapper">
+        <h2 className="PokemonName">{pokemon.name}</h2>
         <img
-          class="PokemonAvatar"
+          className="PokemonAvatar"
           src={
             pokemon.sprites.versions["generation-v"]["black-white"].animated
               .front_default
@@ -15,7 +15,7 @@ const PokemonCard = ({ pokemon }) => (
           alt={pokemon.name}
         />
       </div>
-      <div class="PokemonDetails">
+      <div className="PokemonDetails">
         <span>
           <strong>Height</strong>: {pokemon.height * 10} cm
         </span>
@@ -32,5 +32,9 @@ const PokemonCard = ({ pokemon }) => (
     </>
   </div>
 );
+
+PokemonCard.propTypes = {};
+
+PokemonCard.defaultProps = {};
 
 export default PokemonCard;
