@@ -38,6 +38,16 @@ describe("App", () => {
     expect(buscarText).toBeInTheDocument();
   });
 
+  it("should loading when click in button", async () => {
+    render(<App />);
+
+    userEvent.type(screen.getByRole("textbox"), "test");
+    userEvent.click(screen.getByRole("button"));
+
+    const errorSpan = screen.getByText("Carregando....");
+    expect(errorSpan).toBeInTheDocument();
+  });
+
   it("should setError and stop loading when theres no pokemon", async () => {
     getPokemonByIdOrName.mockResolvedValue("Pokemon não encontrado.");
     render(<App />);

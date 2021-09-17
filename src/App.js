@@ -4,11 +4,8 @@ import { getPokemonByIdOrName } from "./services/pokeApi";
 const App = () => {
   const [pokemon, setPokemon] = useState(null);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [typedPokemon, setTypedPokemon] = useState("");
-
-  useEffect(async () => {
-    await changeStates();
-  }, [error]);
 
   function handleChange(event) {
     setTypedPokemon(event.target.value);
@@ -16,13 +13,10 @@ const App = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    changeStates();
-  }
-
-  async function changeStates() {
     if (!typedPokemon) {
       return;
     }
+    setIsLoading(true);
 
     let pokemon = await getPokemonByIdOrName(typedPokemon);
 
@@ -33,6 +27,7 @@ const App = () => {
       setPokemon(pokemon);
       setError(null);
     }
+    setIsLoading(false);
   }
 
   function renderPokemonCard(pokemon) {
@@ -78,7 +73,9 @@ const App = () => {
           placeholder={"Nome ou ID do pokemon"}
           onChange={handleChange}
         ></input>
-        <button type="submit">Buscar</button>
+        <button type="submit">
+          {isLoading ? <>Carregando....</> : <>Buscar</>}
+        </button>
       </form>
       {error && <span>{error}</span>}
       {pokemon && renderPokemonCard(pokemon)}
