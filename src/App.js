@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import PokemonCard from "./components/PokemonCard/PokemonCard";
 import { getPokemonByIdOrName } from "./services/pokeApi";
 
 const App = () => {
@@ -30,39 +31,6 @@ const App = () => {
     setIsLoading(false);
   }
 
-  function renderPokemonCard(pokemon) {
-    return (
-      <div key={pokemon.id}>
-        <>
-          <div>
-            <h2>{pokemon.name}</h2>
-            <img
-              src={
-                pokemon.sprites.versions["generation-v"]["black-white"].animated
-                  .front_default
-              }
-              alt={pokemon.name}
-            />
-          </div>
-          <div>
-            <span>
-              <strong>Height</strong>: {pokemon.height * 10} cm
-            </span>
-            <span>
-              <strong>Weight</strong>: {pokemon.weight / 10} kg
-            </span>
-            <span>
-              <strong>Type</strong>: {pokemon.types[0].type.name}
-            </span>
-            <span>
-              <strong>id</strong>: {pokemon.id}
-            </span>
-          </div>
-        </>
-      </div>
-    );
-  }
-
   return (
     <div>
       <h1>Bem vindo à pokedex!</h1>
@@ -78,7 +46,7 @@ const App = () => {
         </button>
       </form>
       {error && <span>{error}</span>}
-      {pokemon && renderPokemonCard(pokemon)}
+      {pokemon && <PokemonCard pokemon={pokemon} />}
     </div>
   );
 };
