@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PokemonCard from "./components/PokemonCard/PokemonCard";
+import NotFoundCard from "./components/NotFoundCard/NotFoundCard";
 import { getPokemonByIdOrName } from "./services/pokeApi";
 import "./App.css";
 import pokeball from "./assets/pokeball.svg";
@@ -55,8 +56,11 @@ const App = () => {
           )}
         </button>
       </form>
-      {error && <span>{error}</span>}
-      {pokemon && <PokemonCard pokemon={pokemon} />}
+      {pokemon ? (
+        <PokemonCard pokemon={pokemon} />
+      ) : (
+        <NotFoundCard error={error} />
+      )}
     </div>
   );
 };

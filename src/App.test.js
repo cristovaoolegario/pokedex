@@ -49,7 +49,7 @@ describe("App", () => {
   });
 
   it("should setError and stop loading when theres no pokemon", async () => {
-    getPokemonByIdOrName.mockResolvedValue("Pokemon não encontrado.");
+    getPokemonByIdOrName.mockResolvedValue("Pokémon não encontrado.");
     render(<App />);
 
     userEvent.type(screen.getByRole("textbox"), "test");
@@ -58,7 +58,7 @@ describe("App", () => {
       userEvent.click(screen.getByRole("button"));
     });
 
-    const errorSpan = screen.getByText("Pokemon não encontrado.");
+    const errorSpan = screen.getByText("Pokémon não encontrado.");
     expect(errorSpan).toBeInTheDocument();
   });
 

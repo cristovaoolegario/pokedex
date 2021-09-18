@@ -43,6 +43,6 @@ describe("Get Pokemon By ID Or Name", () => {
     let response = await getPokemonByIdOrName("test");
 
     expect(axios.get).toBeCalled();
-    expect(response).toBe("Pokemon não encontrado");
+    expect(response).toBe("Pokémon não encontrado");
   });
 });
