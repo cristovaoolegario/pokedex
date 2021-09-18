@@ -59,7 +59,7 @@ const App = () => {
       {pokemon ? (
         <PokemonCard pokemon={pokemon} />
       ) : (
-        <NotFoundCard error={error} />
+        error && <NotFoundCard error={error} />
       )}
     </div>
   );

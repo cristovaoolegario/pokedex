@@ -8,7 +8,7 @@ const NotFoundCard = ({ error }) => {
       <p>
         <strong>{error}</strong>
       </p>
-      <img src={confusedPikachu} />
+      <img src={confusedPikachu} alt="notFoundImg" />
     </div>
   );
 };

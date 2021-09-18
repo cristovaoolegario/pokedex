@@ -14,11 +14,15 @@ describe("App", () => {
     const paragraph = screen.getByText("Digite o nome ou a ID do pokemon!");
     const input = screen.getByRole("textbox");
     const submitButton = screen.getByRole("button");
+    const pokeballImg = screen.getByAltText("pokeball");
+    const notFoundImg = screen.queryByAltText("notFoundImg");
 
     expect(welcomeText).toBeInTheDocument();
     expect(paragraph).toBeInTheDocument();
     expect(input).toBeInTheDocument();
     expect(submitButton).toBeInTheDocument();
+    expect(pokeballImg).toBeInTheDocument();
+    expect(notFoundImg).not.toBeInTheDocument();
   });
 
   it("should render Buscar when page is not loading", () => {
@@ -29,10 +33,11 @@ describe("App", () => {
     expect(buscarText).toBeInTheDocument();
   });
 
-  it("should do noting when there is no typed pokemon", () => {
+  it("should do noting when there is no typed pokemon", async () => {
     render(<App />);
-    userEvent.click(screen.getByRole("button"));
-
+    await act(async () => {
+      userEvent.click(screen.getByRole("button"));
+    });
     const buscarText = screen.getByText("Buscar");
 
     expect(buscarText).toBeInTheDocument();
