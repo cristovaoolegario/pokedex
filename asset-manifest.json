@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pokedex/static/css/main.c2736d5d.chunk.css",
+    "main.css": "/pokedex/static/css/main.29b573bd.chunk.css",
     "main.js": "/pokedex/static/js/main.4a21d3fa.chunk.js",
     "main.js.map": "/pokedex/static/js/main.4a21d3fa.chunk.js.map",
     "runtime-main.js": "/pokedex/static/js/runtime-main.07f53034.js",
@@ -10,7 +10,7 @@
     "static/js/3.b65db872.chunk.js": "/pokedex/static/js/3.b65db872.chunk.js",
     "static/js/3.b65db872.chunk.js.map": "/pokedex/static/js/3.b65db872.chunk.js.map",
     "index.html": "/pokedex/index.html",
-    "static/css/main.c2736d5d.chunk.css.map": "/pokedex/static/css/main.c2736d5d.chunk.css.map",
+    "static/css/main.29b573bd.chunk.css.map": "/pokedex/static/css/main.29b573bd.chunk.css.map",
     "static/js/2.75708518.chunk.js.LICENSE.txt": "/pokedex/static/js/2.75708518.chunk.js.LICENSE.txt",
     "static/media/index.css": "/pokedex/static/media/background.380e1460.png",
     "static/media/not-found.7a3a86d7.gif": "/pokedex/static/media/not-found.7a3a86d7.gif",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.07f53034.js",
     "static/js/2.75708518.chunk.js",
-    "static/css/main.c2736d5d.chunk.css",
+    "static/css/main.29b573bd.chunk.css",
     "static/js/main.4a21d3fa.chunk.js"
   ]
 }
