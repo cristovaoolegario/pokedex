@@ -1,0 +1,12 @@
+{
+  "welcome": "Welcome to Pokedex!",
+  "instructions": "Type the name or pokemon ID!",
+  "input": "Name or pokemon ID!",
+  "loading": "Loading....",
+  "search": "Search",
+  "not-found-pokemon": "Pokemon not found",
+  "height": "Height",
+  "weight": "Weight",
+  "type": "Type",
+  "id": "Id"
+}

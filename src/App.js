@@ -4,8 +4,10 @@ import NotFoundCard from "./components/NotFoundCard/NotFoundCard";
 import { getPokemonByIdOrName } from "./services/pokeApi";
 import "./App.css";
 import pokeball from "./assets/pokeball.svg";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
+  const { t } = useTranslation();
   const [pokemon, setPokemon] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,21 +38,21 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Bem vindo à Pokedex!</h1>
-      <p className="Instructions">Digite o nome ou a ID do pokemon!</p>
+      <h1>{t("welcome")}</h1>
+      <p className="Instructions">{t("instructions")}</p>
       <form className="Form" onSubmit={handleSubmit}>
         <input
           className="Input"
           value={typedPokemon}
-          placeholder="Nome ou ID do pokemon"
+          placeholder={t("input")}
           onChange={handleChange}
         ></input>
         <button className="SearchButton" type="submit">
           {isLoading ? (
-            <>Carregando....</>
+            <>{t("loading")}</>
           ) : (
             <>
-              Buscar{" "}
+              {t("search")}{" "}
               <img className="ButtonIcon" src={pokeball} alt="pokeball" />{" "}
             </>
           )}

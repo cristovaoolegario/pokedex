@@ -1,6 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import PokemonCard from "./PokemonCard";
 
+jest.mock("react-i18next", () => ({
+  useTranslation: () => ({ t: (key) => key }),
+}));
+
 describe("PokemonCard", () => {
   it("should render page elements ", () => {
     let pokemon = {

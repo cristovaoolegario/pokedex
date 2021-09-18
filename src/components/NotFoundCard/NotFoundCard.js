@@ -1,12 +1,14 @@
 import React from "react";
 import confusedPikachu from "../../assets/not-found.gif";
 import "../GenericCard.css";
+import { useTranslation } from "react-i18next";
 
 const NotFoundCard = ({ error }) => {
+  const { t } = useTranslation();
   return (
     <div className="GenericCard">
       <p>
-        <strong>{error}</strong>
+        <strong>{t(error)}</strong>
       </p>
       <img src={confusedPikachu} alt="notFoundImg" />
     </div>

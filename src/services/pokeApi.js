@@ -7,7 +7,7 @@ async function getPokemonByIdOrName(typedPokemon) {
     let response = await axios.get(`${baseURL}/pokemon/${typedPokemon}`);
     return response.data;
   } catch (error) {
-    return "Pokémon não encontrado";
+    return "not-found-pokemon";
   }
 }
 

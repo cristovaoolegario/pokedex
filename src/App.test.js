@@ -5,13 +5,16 @@ import { getPokemonByIdOrName } from "./services/pokeApi";
 import { act } from "react-dom/test-utils";
 
 jest.mock("./services/pokeApi");
+jest.mock("react-i18next", () => ({
+  useTranslation: () => ({ t: (key) => key }),
+}));
 
 describe("App", () => {
   it("should render page elements ", () => {
     render(<App />);
 
     const welcomeText = screen.getByRole("heading");
-    const paragraph = screen.getByText("Digite o nome ou a ID do pokemon!");
+    const paragraph = screen.getByText("instructions");
     const input = screen.getByRole("textbox");
     const submitButton = screen.getByRole("button");
     const pokeballImg = screen.getByAltText("pokeball");
@@ -25,10 +28,10 @@ describe("App", () => {
     expect(notFoundImg).not.toBeInTheDocument();
   });
 
-  it("should render Buscar when page is not loading", () => {
+  it("should render search when page is not loading", () => {
     render(<App />);
 
-    const buscarText = screen.getByText("Buscar");
+    const buscarText = screen.getByText("search");
 
     expect(buscarText).toBeInTheDocument();
   });
@@ -38,7 +41,7 @@ describe("App", () => {
     await act(async () => {
       userEvent.click(screen.getByRole("button"));
     });
-    const buscarText = screen.getByText("Buscar");
+    const buscarText = screen.getByText("search");
 
     expect(buscarText).toBeInTheDocument();
   });
@@ -49,12 +52,12 @@ describe("App", () => {
     userEvent.type(screen.getByRole("textbox"), "test");
     userEvent.click(screen.getByRole("button"));
 
-    const errorSpan = screen.getByText("Carregando....");
+    const errorSpan = screen.getByText("loading");
     expect(errorSpan).toBeInTheDocument();
   });
 
   it("should setError and stop loading when theres no pokemon", async () => {
-    getPokemonByIdOrName.mockResolvedValue("Pokémon não encontrado.");
+    getPokemonByIdOrName.mockResolvedValue("Pokémon not found.");
     render(<App />);
 
     userEvent.type(screen.getByRole("textbox"), "test");
@@ -63,7 +66,7 @@ describe("App", () => {
       userEvent.click(screen.getByRole("button"));
     });
 
-    const errorSpan = screen.getByText("Pokémon não encontrado.");
+    const errorSpan = screen.getByText("Pokémon not found.");
     expect(errorSpan).toBeInTheDocument();
   });
 
