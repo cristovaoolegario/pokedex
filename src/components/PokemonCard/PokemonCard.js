@@ -10,6 +10,8 @@ const PokemonCard = ({ pokemon }) => (
           className="PokemonAvatar"
           src={
             pokemon.sprites.versions["generation-v"]["black-white"].animated
+              .front_default ??
+            pokemon.sprites.versions["generation-v"]["black-white"]
               .front_default
           }
           alt={pokemon.name}
