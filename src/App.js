@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PokemonCard from "./components/PokemonCard/PokemonCard";
 import { getPokemonByIdOrName } from "./services/pokeApi";
+import "./App.css";
+import pokeball from "./assets/pokeball.svg";
 
 const App = () => {
   const [pokemon, setPokemon] = useState(null);
@@ -32,17 +34,25 @@ const App = () => {
   }
 
   return (
-    <div>
-      <h1>Bem vindo à pokedex!</h1>
-      <p>Digite o nome ou a ID do pokemon!</p>
-      <form onSubmit={handleSubmit}>
+    <div className="App">
+      <h1 className="Welcome">Bem vindo à pokedex!</h1>
+      <p className="Instructions">Digite o nome ou a ID do pokemon!</p>
+      <form className="Form" onSubmit={handleSubmit}>
         <input
+          className="Input"
           value={typedPokemon}
           placeholder={"Nome ou ID do pokemon"}
           onChange={handleChange}
         ></input>
-        <button type="submit">
-          {isLoading ? <>Carregando....</> : <>Buscar</>}
+        <button className="SearchButton" type="submit">
+          {isLoading ? (
+            <>Carregando....</>
+          ) : (
+            <>
+              Buscar{" "}
+              <img className="ButtonIcon" src={pokeball} alt="pokeball" />{" "}
+            </>
+          )}
         </button>
       </form>
       {error && <span>{error}</span>}
