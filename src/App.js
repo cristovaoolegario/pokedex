@@ -22,7 +22,7 @@ const App = () => {
     }
     setIsLoading(true);
 
-    let pokemon = await getPokemonByIdOrName(typedPokemon);
+    let pokemon = await getPokemonByIdOrName(typedPokemon.toLowerCase());
 
     if (typeof pokemon === "string") {
       setError(pokemon);
