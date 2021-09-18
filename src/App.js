@@ -35,13 +35,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Welcome">Bem vindo à pokedex!</h1>
+      <h1>Bem vindo à Pokedex!</h1>
       <p className="Instructions">Digite o nome ou a ID do pokemon!</p>
       <form className="Form" onSubmit={handleSubmit}>
         <input
           className="Input"
           value={typedPokemon}
-          placeholder={"Nome ou ID do pokemon"}
+          placeholder="Nome ou ID do pokemon"
           onChange={handleChange}
         ></input>
         <button className="SearchButton" type="submit">

@@ -6,17 +6,6 @@
   justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,18 +13,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(15px + 2vmin);
   color: white;
-}
-
-.Welcome {
-  font-size: 4em;
-  margin-top: 80px;
 }
 
 .Instructions {
   margin-top: 20px;
-  font-size: 1.5em;
+  font-size: calc(15px + 1vmin);
 }
 
 .Form {
@@ -45,7 +29,8 @@
 }
 
 .Input {
-  height: 50px;
+  height: calc(40px + 2vmin);
+  width: calc(200px + 10vmin);
   font-size: 1.2em;
   padding: 0 24px;
   border-radius: 5px 0 0 5px;
@@ -55,8 +40,9 @@
 }
 
 .SearchButton {
-  height: 50px;
-  width: 210px;
+  display: inline-block;
+  height: calc(40px + 2vmin);
+  width: calc(40px + 10vmin);
   background: #e3350c;
   border-radius: 0 5px 5px 0;
   border: 0;
