@@ -14,10 +14,11 @@ body {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   color: #f3f3f3;
-  background: url("./assets/background.png");
-  background-size: cover; /* <------ */
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url("./assets/background.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 #root {
   max-width: 1080px;
