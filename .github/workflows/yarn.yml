@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -16,6 +16,7 @@ jobs:
       - run: yarn
       - run: yarn test
   build-and-deploy:
+    needs: build-and-test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
