@@ -49,7 +49,15 @@ const App = () => {
         ></input>
         <button className="SearchButton" type="submit">
           {isLoading ? (
-            <>{t("loading")}</>
+            <>
+              <img
+                id="spinning-pokeball"
+                className="ButtonIcon"
+                src={pokeball}
+                alt="spinning-pokeball"
+              />{" "}
+              {t("loading")}
+            </>
           ) : (
             <>
               {t("search")}{" "}
