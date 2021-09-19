@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: column;
   height: 450px;
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   justify-content: space-evenly;
   background: rgba(90, 90, 90, 0.6);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);

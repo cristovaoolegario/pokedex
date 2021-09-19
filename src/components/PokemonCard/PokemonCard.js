@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 const PokemonCard = ({ pokemon }) => {
   const { t } = useTranslation();
   return (
-    <div className="GenericCard" key={pokemon.id}>
+    <div className="PokemonCard" key={pokemon.id}>
       <div className="PokemonAvatarWrapper">
         <h2 className="PokemonName">{pokemon.name}</h2>
         <img
