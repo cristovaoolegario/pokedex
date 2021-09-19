@@ -1,7 +1,7 @@
 {
   "welcome": "Bem vindo à Pokedex!",
   "instructions": "Digite o nome ou a ID do pokemon!",
-  "input": "Pikachu",
+  "input": "Exemplo: Pikachu",
   "loading": "Carregando....",
   "search": "Buscar",
   "not-found-pokemon": "Pokemon não encontrado",
