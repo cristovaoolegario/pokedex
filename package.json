@@ -5,7 +5,7 @@
   "homepage": "https://cristovaoolegario.github.io/pokedex",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^12.1.0",
+    "@testing-library/react": "^12.1.1",
     "@testing-library/user-event": "^13.2.1",
     "axios": "^0.21.4",
     "axios-mock-adapter": "^1.20.0",
