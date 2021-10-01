@@ -2,6 +2,18 @@
 
 A simple application that uses https://pokeapi.co API to show pokemons.
 
+## Mobile version
+
+<p align="center">
+  <img src="https://github.com/cristovaoolegario/pokedex/blob/main/static/pokedex-mobile.gif?raw=true" alt="pokedex mobile"/>
+</p>
+
+## Desktop version
+
+<p align="center">
+  <img src="https://github.com/cristovaoolegario/pokedex/blob/main/static/pokedex-desktop.gif?raw=true" alt="pokedex desktop"/>
+</p>
+
 ## Available Scripts
 
 In the project directory, you can run:
