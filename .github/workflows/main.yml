@@ -15,7 +15,7 @@ jobs:
           node-version: 12
       - run: yarn
       - run: yarn test
-  
+
   generate-tag:
     needs: build-and-test
     runs-on: ubuntu-latest
@@ -28,14 +28,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-  
+
   build-and-deploy:
-    needs: build-and-test
+    needs:
+      - build-and-test
+      - generate-tag
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.4
-      - name: Install and Build 🔧 
+      - name: Install and Build 🔧
         run: |
           yarn
           yarn build
