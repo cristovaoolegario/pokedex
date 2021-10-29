@@ -1,5 +1,8 @@
 # Pokedex
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/cristovaoolegario/pokedex/CI)
+![Codecov](https://img.shields.io/codecov/c/gh/cristovaoolegario/pokedex)
+
 A simple application that uses https://pokeapi.co API to show pokemons.
 
 ## Mobile version
