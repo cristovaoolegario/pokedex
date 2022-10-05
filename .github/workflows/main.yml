@@ -9,7 +9,7 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3.1.0
       - uses: actions/setup-node@v2.4.1
         with:
           node-version: 12
@@ -26,7 +26,7 @@ jobs:
     needs: build-and-test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3.1.0
         with:
           fetch-depth: '0'
       - name: Bump version and push tag
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3.1.0
       - name: Install and Build 🔧
         run: |
           yarn
